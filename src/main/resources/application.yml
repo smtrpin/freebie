@@ -1,0 +1,32 @@
+spring:
+  jpa:
+    database: postgresql
+    show-sql: false
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:postgresql://localhost:5432/yh_freebie
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+    default-schema: public
+  resources:
+    chain:
+      enabled: true
+youhack:
+  site:
+    domain: youhack.ru
+    host: https://youhack.ru/
+  participate:
+    url: https://youhack.ru/forums/516/
+    userAgent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:66.0) Gecko/20100101 Firefox/66.0
+  account:
+    username: username
+    cookie:
+      IDstack: 123456
+      xf_user: 123456%56f4ds45sd456f45sd45f645sdf
+      xf_session: sdf4sd564f465sd465fs4d56f546s456
+  pages:
+    limit: 3

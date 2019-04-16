@@ -1,0 +1,49 @@
+databaseChangeLog:
+
+- preCondition:
+  - not:
+    tableExists: freebie
+
+- changeSet:
+    id: 001-create-freebie
+    author: KulikovVO
+    comment: Добавлена таблица freebie
+    changes:
+    - createSequence:
+        sequenceName: hibernate_sequence
+    - createTable:
+        tableName: freebie
+        columns:
+        - column:
+            name: id
+            type: BIGINT
+            autoIncrement: true
+            constraints:
+              nullable: false
+              ptimaryKey: true
+              unique: true
+        - column:
+            name: caption
+            type: text
+            constraints:
+              nullable: false
+        - column:
+            name: freebie_text
+            type: text
+            constraints:
+              nullable: true
+        - column:
+            name: thread_id
+            type: BIGINT
+            constraints:
+              nullable: false
+        - column:
+            name: is_participate
+            type: BOOLEAN
+            constraints:
+              nullable: false
+        - column:
+            name: is_completed
+            type: BOOLEAN
+            constraints:
+              nullable: false
